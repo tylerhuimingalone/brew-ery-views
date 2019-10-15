@@ -4,7 +4,7 @@ Brewery.create(
   city: "Boston",
   state: "MA",
   zip: "02114",
-  image ""
+  image: ""
 )
 Brewery.create(
   name: "Night Shift Brewing",
@@ -12,7 +12,7 @@ Brewery.create(
   city: "Boston",
   state: "MA",
   zip: "02114",
-  image ""
+  image: ""
 )
 Brewery.create(
   name: "Harpoon Brewery & Beer Hall",
@@ -20,7 +20,7 @@ Brewery.create(
   city: "Boston",
   state: "MA",
   zip: "02110",
-  image ""
+  image: ""
 )
 Brewery.create(
   name: "Hopsters Brewing Company",
@@ -28,5 +28,5 @@ Brewery.create(
   city: "Boston",
   state: "MA",
   zip: "02110",
-  image ""
+  image: ""
 )
