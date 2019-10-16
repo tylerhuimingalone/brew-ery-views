@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import BreweryTile from './BreweryTile'
-
-const BreweryIndexContainer = props => {
+const BreweryList = props => {
   const [breweries, setBreweries] = useState([])
 
   useEffect(() => {fetch("/api/v1/breweries")
@@ -22,29 +20,22 @@ const BreweryIndexContainer = props => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
-  const breweryTiles = breweries.map(brewery => {
+  const breweryList = breweries.map(brewery => {
     return(
-      <BreweryTile
-        key = {brewery.id}
-        id = {brewery.id}
-        name = {brewery.name}
-        city = {brewery.city}
-        state = {brewery.state}
-      />
+      <li key={brewery.id}>
+        {brewery.name}
+      </li>
     )
   })
 
-  return (
-    <div>
-      <div className="row">
-        <h1 className="text-center">Brewery View</h1>
-      </div>
-      <hr/>
-      <div className="row">
-        {breweryTiles}
-      </div>
+  return(
+    <div className="small-12 medium-3 columns">
+      <h4>Current Breweries</h4>
+      <ul>
+        {breweryList}
+      </ul>
     </div>
   )
 }
 
-export default BreweryIndexContainer
+export default BreweryList
