@@ -1,4 +1,5 @@
 import React from "react"
+import { BrowserRouter } from "react-router-dom"
 import Enzyme, { mount } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
 Enzyme.configure({ adapter: new Adapter() })
@@ -10,13 +11,15 @@ describe("BreweryTile", () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <BreweryTile
-        key="3"
-        id="3"
-        name="Night Shift Brewing"
-        city="Boston"
-        state="MA"
-      />
+      <BrowserRouter>
+        <BreweryTile
+          key="3"
+          id="3"
+          name="Night Shift Brewing"
+          city="Boston"
+          state="MA"
+        />
+      </BrowserRouter>
     )
   })
 
