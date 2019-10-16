@@ -30,6 +30,7 @@ const BreweryIndexContainer = props => {
         name = {brewery.name}
         city = {brewery.city}
         state = {brewery.state}
+        image = {brewery.image}
       />
     )
   })
