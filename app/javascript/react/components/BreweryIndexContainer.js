@@ -25,12 +25,12 @@ const BreweryIndexContainer = props => {
   const breweryTiles = breweries.map(brewery => {
     return(
       <BreweryTile
-        key = {brewery.id}
-        id = {brewery.id}
-        name = {brewery.name}
-        city = {brewery.city}
-        state = {brewery.state}
-        image = {brewery.image}
+        key={brewery.id}
+        id={brewery.id}
+        name={brewery.name}
+        city={brewery.city}
+        state={brewery.state}
+        image={brewery.image}
       />
     )
   })

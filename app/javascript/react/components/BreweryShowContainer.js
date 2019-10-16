@@ -26,17 +26,15 @@ const BreweryShowContainer = props => {
   return (
     <div>
       <div className = "columns small-12 medium-6">
-        <h2> {brewery.name} </h2>
+        <h3> {brewery.name} </h3>
           <img src={brewery.image} width = "500"/>
-          <h3>
-            {brewery.address} <br/>
-            {brewery.city}, {brewery.state} <br/>
+          <p>
+            {brewery.address}&nbsp;
+            {brewery.city},&nbsp;
+            {brewery.state}&nbsp;
             {brewery.zip}
-          </h3>
+          </p>
           <Link to="/breweries"> Return to Homepage </Link>
-      </div>
-      <div className = "columns small-12 medium-6">
-        <p> reviews go here </p>
       </div>
     </div>
   )

@@ -9,7 +9,6 @@ const BreweryTile = props => {
         <h4>{props.name}</h4>
       </Link>
       <img src={props.image} width = "200" />
-      <br/>
       <h5>{props.city}, {props.state}</h5>
     </div>
   )
