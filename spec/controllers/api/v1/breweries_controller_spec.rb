@@ -25,11 +25,8 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
   describe "POST#create" do
     it "should return a newly created brewery when filled out correctly" do
       user = FactoryBot.create(:user)
-
       sign_in user
-
       current_count = Brewery.count
-
       test_brewery = { brewery: {
         name: "Test Brew",
         address: "123 Example Street",
@@ -53,11 +50,8 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
 
     it "should return errors when filled out incorrectly" do
       user = FactoryBot.create(:user)
-
       sign_in user
-
       current_count = Brewery.count
-
       blank_brewery = { brewery: {
         name: "",
         address: "",
