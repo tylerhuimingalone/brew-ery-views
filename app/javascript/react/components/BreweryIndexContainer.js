@@ -5,7 +5,9 @@ import BreweryTile from './BreweryTile'
 const BreweryIndexContainer = props => {
   const [breweries, setBreweries] = useState([])
 
-  useEffect(() => {fetch("/api/v1/breweries")
+  useEffect(() => {fetch("/api/v1/breweries", {
+    credentials: 'same-origin',
+    })
     .then((response) => {
       if (response.ok) {
         return response

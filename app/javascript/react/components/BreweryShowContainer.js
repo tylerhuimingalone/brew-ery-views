@@ -8,7 +8,9 @@ const BreweryShowContainer = props => {
 
   let breweryId = props.match.params.id
 
-  useEffect(() => {fetch(`/api/v1/breweries/${breweryId}`)
+  useEffect(() => {fetch(`/api/v1/breweries/${breweryId}`, {
+    credentials: 'same-origin',
+    })
     .then((response) => {
       if (response.ok) {
         return response
