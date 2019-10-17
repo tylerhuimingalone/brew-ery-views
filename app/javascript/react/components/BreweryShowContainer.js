@@ -39,7 +39,7 @@ const BreweryShowContainer = props => {
           <Link to="/breweries"> Return to Homepage </Link>
       </div>
       <div>
-        <button type="button">Reviews</button>
+        <button type="button">Reviews onClick=</button>
       </div>
       <div>
         <ReviewIndexContainer
