@@ -3,11 +3,7 @@ require "rails_helper"
 RSpec.describe Api::V1::BreweriesController, type: :controller do
   describe "GET#index" do
     it "should return a list of all of the Breweries" do
-      FactoryBot.create(:brewery)
-      FactoryBot.create(:brewery)
-      FactoryBot.create(:brewery)
-      FactoryBot.create(:brewery)
-      FactoryBot.create(:brewery)
+      FactoryBot.create_list(:brewery, 5)
       brewery = FactoryBot.create(:brewery, name: "Test Brews")
 
       get :index
@@ -28,6 +24,10 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
 
   describe "POST#create" do
     it "should return a newly created brewery when filled out correctly" do
+      user = FactoryBot.create(:user)
+
+      sign_in user
+
       current_count = Brewery.count
 
       test_brewery = { brewery: {
@@ -52,6 +52,10 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
     end
 
     it "should return errors when filled out incorrectly" do
+      user = FactoryBot.create(:user)
+
+      sign_in user
+
       current_count = Brewery.count
 
       blank_brewery = { brewery: {
