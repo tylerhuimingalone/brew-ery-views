@@ -10,12 +10,16 @@ class Api::V1::BreweriesController < ApplicationController
   end
 
   def create
-    new_brewery = Brewery.new(brewery_params)
+    if user_signed_in?
+      new_brewery = Brewery.new(brewery_params)
 
-    if new_brewery.save
-      render json: new_brewery
+      if new_brewery.save
+        render json: new_brewery
+      else
+        render json: new_brewery.errors
+      end
     else
-      render json: new_brewery.errors
+      render json: {user: "You must be signed in to add a brewery."}
     end
   end
 

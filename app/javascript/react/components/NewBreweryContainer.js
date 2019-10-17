@@ -36,6 +36,7 @@ const NewBreweryContainer = props => {
     event.preventDefault()
     if (validForSubmission()) {
       fetch("/api/v1/breweries", {
+        credentials: 'same-origin',
         method: "POST",
         body: JSON.stringify(newBrewery),
         headers: {
@@ -91,7 +92,8 @@ const NewBreweryContainer = props => {
   return(
     <div className="row">
       <form className="small-12 medium-9 columns" onSubmit={postNewBrewery}>
-        <h4 className="text-center">New Brewery Form</h4>
+        <h3 className="text-center">New Brewery Form</h3>
+        <h5 className="text-center">{errors.user}</h5>
         <label>
           Name: {errors.name}
           <input
