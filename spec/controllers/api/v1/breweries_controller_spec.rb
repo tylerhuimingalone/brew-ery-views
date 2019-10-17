@@ -3,11 +3,7 @@ require "rails_helper"
 RSpec.describe Api::V1::BreweriesController, type: :controller do
   describe "GET#index" do
     it "should return a list of all of the Breweries" do
-      FactoryBot.create(:brewery)
-      FactoryBot.create(:brewery)
-      FactoryBot.create(:brewery)
-      FactoryBot.create(:brewery)
-      FactoryBot.create(:brewery)
+      FactoryBot.create_list(:brewery, 5)
       brewery = FactoryBot.create(:brewery, name: "Test Brews")
 
       get :index
