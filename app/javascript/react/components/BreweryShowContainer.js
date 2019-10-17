@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
+import ReviewIndexContainer from './ReviewIndexContainer'
+
 const BreweryShowContainer = props => {
   const [brewery, setBrewery] = useState([])
 
@@ -35,6 +37,14 @@ const BreweryShowContainer = props => {
             {brewery.zip}
           </p>
           <Link to="/breweries"> Return to Homepage </Link>
+      </div>
+      <div>
+        <button type="button">Reviews</button>
+      </div>
+      <div>
+        <ReviewIndexContainer
+          breweryId={breweryId}
+        />
       </div>
     </div>
   )
