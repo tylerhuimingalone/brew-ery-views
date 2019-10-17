@@ -17,7 +17,7 @@ const BreweryList = props => {
     })
     .then(response => response.json())
     .then(body => {
-      setBreweries(body)
+      setBreweries(body.breweries)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])

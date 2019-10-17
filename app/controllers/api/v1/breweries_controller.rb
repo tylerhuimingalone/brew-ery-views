@@ -2,7 +2,7 @@ class Api::V1::BreweriesController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    render json: Brewery.all
+    render json: { breweries: Brewery.all, user: user_signed_in? }
   end
 
   def show
