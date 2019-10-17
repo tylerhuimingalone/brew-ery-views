@@ -21,6 +21,6 @@ class Api::V1::BreweriesController < ApplicationController
 
   private
   def brewery_params
-    JSON.parse(request.body.read)
+    params.require(:brewery).permit(:name, :address, :city, :state, :zip, :image)
   end
 end
