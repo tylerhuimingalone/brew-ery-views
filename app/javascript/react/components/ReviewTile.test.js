@@ -1,3 +1,6 @@
+import React from "react"
+import Enzyme, { mount } from "enzyme"
+
 import ReviewTile from "./ReviewTile"
 
 describe("ReviewTile", () => {
