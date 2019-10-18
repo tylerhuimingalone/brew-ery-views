@@ -1,5 +1,5 @@
 .top-bar-section li,
-.top-bar{
+.top-bar {
   a {
     color: white;
   }
@@ -7,14 +7,14 @@
   background-color: #601710;
 }
 
-.title{
+.title {
   font-family: 'Euphoria Script', sans-serif;
   font-size: 2em;
   font-weight: bold;
   margin-left: 10%;
 }
 
-.top-bar-section li{
+.top-bar-section li {
   list-style-type: none;
   font-family: 'Open Sans', sans-serif;
 }
@@ -23,8 +23,17 @@
   margin-right: 3%;
 }
 
-.flash{
+.flash {
   padding-right: 20px;
   padding-top: 5px;
   text-align: right;
+}
+
+.button {
+  background-color: #601710;
+  font-family: 'Euphoria Script', sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
 }

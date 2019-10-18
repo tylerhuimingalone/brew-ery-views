@@ -54,7 +54,7 @@ const BreweryIndexContainer = props => {
       <div className="row">
         {breweryTiles}
       </div>
-      {button}
+      <div className="text-center row">{button}</div>
     </div>
   )
 }
