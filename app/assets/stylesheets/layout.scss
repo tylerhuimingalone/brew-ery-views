@@ -1,13 +1,27 @@
+
+
 .top-bar-section li,
 .top-bar{
   a {
     color: white;
   }
+  padding: 0px;
   background-color: #601710;
+}
+
+.title{
+  font-family: 'Euphoria Script', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  margin-left: 10%;
 }
 
 .top-bar-section li{
   list-style-type: none;
+}
+
+.top-bar-section {
+  margin-right: 3%;
 }
 
 .flash{
