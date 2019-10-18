@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brewery View</title>
+  <title>BreweryViews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Euphoria+Script|Lora|Open+Sans&display=swap" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
   <nav class="top-bar">
-    <h1><a href="/">Brewery View</a></h1>
+    <div class="text-center title">
+      <a href="/">BreweryViews</a>
+    </div>
 
     <section class="top-bar-section">
-      <ul class="right">
+      <ul class="menu align-right">
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
