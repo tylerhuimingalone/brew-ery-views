@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import _ from 'lodash'
+import { isEmpty } from 'lodash'
 
 import BreweryList from './BreweryList'
 
@@ -29,7 +29,7 @@ const NewBreweryContainer = props => {
     })
 
     setErrors(submitErrors)
-    return _.isEmpty(submitErrors)
+    return isEmpty(submitErrors)
   }
 
   const postNewBrewery = () => {
@@ -86,7 +86,7 @@ const NewBreweryContainer = props => {
       zip: "",
       image: ""
     })
-    setErrors({})
+    setErrors()
   }
 
   return(
