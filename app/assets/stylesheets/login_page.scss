@@ -1,0 +1,51 @@
+.login-page {
+  max-width: 900px;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+
+  label {
+    color: #601710;
+  }
+}
+
+.background {
+  background-color: #f5e2b3;
+  margin: 0px;
+  padding-top: 100px;
+  padding-bottom: 400px;
+}
+
+.login-title {
+  text-align: center;
+  font-family: 'Open Sans', serif;
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 0px;
+  color: #601710;
+}
+
+.login-hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.actions {
+  input {
+    background-color: #601710;
+    color: #f5e2b3;
+    border-radius: 5px;
+    border-width: 0px;
+    font-family: 'Euphoria Script', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+  }
+}
+
+.shared-links {
+  text-align: right;
+  a {
+    color: #601710;
+  }
+}
