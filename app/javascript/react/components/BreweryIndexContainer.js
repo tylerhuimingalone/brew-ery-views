@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import BreweryTile from './BreweryTile'
 
 const BreweryIndexContainer = props => {
   const [breweries, setBreweries] = useState([])
+  const [showButton, setShowButton] = useState(false)
 
   useEffect(() => {fetch("/api/v1/breweries", {
     credentials: 'same-origin',
@@ -19,7 +21,8 @@ const BreweryIndexContainer = props => {
     })
     .then(response => response.json())
     .then(body => {
-      setBreweries(body)
+      setBreweries(body.breweries)
+      setShowButton(body.user)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
@@ -37,6 +40,11 @@ const BreweryIndexContainer = props => {
     )
   })
 
+  let button = ""
+  if (showButton) {
+    button = <Link to="/breweries/new" className="button">Add Brewery</Link>
+  }
+
   return (
     <div>
       <p className="index-title row text-center">
@@ -46,6 +54,7 @@ const BreweryIndexContainer = props => {
       <div className="row">
         {breweryTiles}
       </div>
+      {button}
     </div>
   )
 }
