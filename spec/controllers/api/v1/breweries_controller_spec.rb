@@ -29,7 +29,6 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
   describe "POST#create" do
     it "should return a newly created brewery when filled out correctly" do
       current_count = Brewery.count
-
       test_brewery = { brewery: {
         name: "Test Brew",
         address: "123 Example Street",
@@ -38,7 +37,7 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
         zip: "02111"
       } }
 
-      post :create, :params => test_brewery, format: :json
+      post :create, params: test_brewery, format: :json
 
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
@@ -53,7 +52,6 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
 
     it "should return errors when filled out incorrectly" do
       current_count = Brewery.count
-
       blank_brewery = { brewery: {
         name: "",
         address: "",
@@ -62,7 +60,7 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
         zip: "02111"
       } }
 
-      post :create, :params =>  blank_brewery, format: :json
+      post :create, params: blank_brewery, format: :json
 
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
