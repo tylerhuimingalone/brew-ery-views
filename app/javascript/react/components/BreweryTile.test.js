@@ -23,11 +23,11 @@ describe("BreweryTile", () => {
     )
   })
 
-  it("renders a h4 tag with the brewery name", () => {
-    expect(wrapper.find("h4").text()).toBe("Night Shift Brewing")
+  it("renders a p tag with the brewery name", () => {
+    expect(wrapper.find(".brewery-name").text()).toBe("Night Shift Brewing")
   })
 
-  it("renders an h5 tag with the brewery city and state", () => {
-    expect(wrapper.find("h5").text()).toBe("Boston, MA")
+  it("renders an p tag with the brewery city and state", () => {
+    expect(wrapper.find(".brewery-location").text()).toBe("Boston, MA")
   })
 })

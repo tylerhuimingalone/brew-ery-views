@@ -51,7 +51,7 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
         zip: "02111"
       } }
 
-      post :create, :params => test_brewery, format: :json
+      post :create, params: test_brewery, format: :json
 
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
@@ -76,7 +76,7 @@ RSpec.describe Api::V1::BreweriesController, type: :controller do
         zip: "02111"
       } }
 
-      post :create, :params =>  blank_brewery, format: :json
+      post :create, params: blank_brewery, format: :json
 
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200

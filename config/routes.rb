@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   get '/breweries', to: 'homes#index'
   get '/breweries/new', to: 'homes#index'
   get '/breweries/:id', to: 'homes#index'
+  get '/breweries/:id/reviews', to: 'homes#index'
+  post '/breweries/api/v1/reviews', to: 'api/v1/reviews#create'
 
   devise_for :users
 
   namespace :api do
     namespace :v1 do
-      resources :breweries, only: [:index, :create, :show]
+      resources :breweries, only: [:index, :create, :show] do
+        resources :reviews, only: [:index]
+      end
+      resources :reviews, only: [:create]
     end
   end
 end

@@ -47,15 +47,14 @@ const BreweryIndexContainer = props => {
 
   return (
     <div>
-      <div>
-        <p  className="index-title row text-center">
-          Here be Pubs!!!!!!
-        </p>
-      </div>
+      <p className="index-title row text-center">
+        Let's Get A Drink
+      </p>
+      <hr id="index-line"/>
       <div className="row">
         {breweryTiles}
       </div>
-      {button}
+      <div className="text-center row">{button}</div>
     </div>
   )
 }
