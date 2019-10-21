@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const ReviewTile = props => {
   let buttons = ""
@@ -10,13 +10,13 @@ const ReviewTile = props => {
   if (props.currentUser === props.userId) {
     buttons = (
       <div className="buttons">
-        <button className="button">Edit</button>
+        <button className="button" onClick={props.editReview}>Edit</button>
         <button className="button" onClick={handleClick}>Delete</button>
       </div>
     )
   }
 
-  return(
+  return (
     <div className="review-box">
       {buttons}
       <div><p>{props.rating}:{props.comment}</p></div>

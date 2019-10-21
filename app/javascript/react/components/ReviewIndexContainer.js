@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import ReviewTile from './ReviewTile'
+import EditReviewContainer from './EditReviewContainer'
 
 const ReviewIndexContainer = props => {
   const [reviews, setReviews] = useState([])
   const [currentUserId, setCurrentUserId] = useState(0)
   const [message, setMessage] = useState("")
+  const [reviewId, setReviewId] = useState(null)
 
   useEffect(() => {fetch(`/api/v1/breweries/${props.breweryId}/reviews`)
     .then((response) => {
@@ -24,10 +26,10 @@ const ReviewIndexContainer = props => {
       setCurrentUserId(body.user_id)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
-  },[message])
+  }, [message])
 
   const deleteReview = (reviewId) => {
-    fetch(`api/v1/reviews/${reviewId}`, {
+    fetch(`/api/v1/reviews/${reviewId}`, {
       credentials: "same-origin",
       method: "DELETE",
       body: JSON.stringify(props.id),
@@ -52,18 +54,42 @@ const ReviewIndexContainer = props => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
+  const resetPage = () => {
+    props.resetView()
+    setMessage("Saved")
+    setReviewId(null)
+  }
+
   const reviewTiles = reviews.map(review => {
-    return(
-      <ReviewTile
-        key={review.id}
-        id={review.id}
-        rating={review.rating}
-        comment={review.comment}
-        userId={review.user_id}
-        currentUser={currentUserId}
-        deleteReview={deleteReview}
-      />
-    )
+    const clickHandler = () => {
+      setReviewId(review.id)
+    }
+
+    if (reviewId === review.id) {
+      return (
+        <EditReviewContainer
+          key={review.id}
+          id={review.id}
+          breweryId={props.breweryId}
+          rating={review.rating}
+          comment={review.comment}
+          resetView={resetPage}
+        />
+      )
+    } else {
+      return(
+        <ReviewTile
+          key={review.id}
+          id={review.id}
+          rating={review.rating}
+          comment={review.comment}
+          userId={review.user_id}
+          currentUser={currentUserId}
+          deleteReview={deleteReview}
+          editReview={clickHandler}
+        />
+      )
+    }
   })
 
   return (
