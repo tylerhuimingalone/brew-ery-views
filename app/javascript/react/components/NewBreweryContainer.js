@@ -4,6 +4,9 @@ import { isEmpty } from 'lodash'
 
 import BreweryList from './BreweryList'
 
+const StateArray = [ 'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ]
+
+
 const NewBreweryContainer = props => {
   const [shouldRedirect, setShouldRedirect] = useState(false)
   const [errors, setErrors] = useState({})
@@ -89,6 +92,12 @@ const NewBreweryContainer = props => {
     setErrors({})
   }
 
+  const StateOptions = StateArray.map((state) => {
+    return (
+      <option key={state} name={state}>{state}</option>
+    )
+  })
+
   return(
     <div className="form-background">
       <div className="form-page">
@@ -128,12 +137,10 @@ const NewBreweryContainer = props => {
 
             <label className="small-12 medium-6 large-4 columns">
               State: {errors.state}
-              <input
-                type="text"
-                name="state"
-                value={newBrewery.state}
-                onChange={handleInputChange}
-              />
+              <select name="state" value={newBrewery.state} onChange={handleInputChange}>
+                <option name=""></option>
+                {StateOptions}
+              </select>
             </label>
 
             <label className="small-12 medium-6 large-4 columns">
