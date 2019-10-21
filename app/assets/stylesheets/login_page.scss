@@ -7,6 +7,16 @@
 
   label {
     color: #601710;
+    margin-bottom: -10px;
+  }
+
+  .login-label {
+    color: #601710;
+    margin-bottom: 0px;
+  }
+
+  em {
+    font-size: 10px;
   }
 }
 
@@ -15,6 +25,8 @@
   margin: 0px;
   padding-top: 100px;
   padding-bottom: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .login-title {
@@ -45,7 +57,16 @@
 
 .shared-links {
   text-align: right;
+  margin-top: -45px;
   a {
     color: #601710;
   }
+}
+
+.login-actions {
+  display: inline-block;
+}
+
+.login-button {
+  margin-top: 22px;
 }
