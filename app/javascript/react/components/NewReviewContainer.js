@@ -83,6 +83,7 @@ const NewReviewContainer = props => {
     <div className="row">
       <form className="small-12 medium-9 columns" onSubmit={postNewReview}>
         <h4 className="text-center">New Review Form</h4>
+        <h5 className="text-center">{errors.user}</h5>
         <label>
           Rating: {errors.rating}
           <select name="rating" value={newReview.rating} onChange={handleInputChange}>

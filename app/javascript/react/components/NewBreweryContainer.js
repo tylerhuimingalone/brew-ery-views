@@ -86,7 +86,7 @@ const NewBreweryContainer = props => {
       zip: "",
       image: ""
     })
-    setErrors()
+    setErrors({})
   }
 
   return(
