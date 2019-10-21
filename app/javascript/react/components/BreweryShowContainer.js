@@ -40,7 +40,7 @@ const BreweryShowContainer = props => {
   }
 
   if (reviewView === "reviews") {
-    component = <ReviewIndexContainer breweryId={breweryId}/>
+    component = <ReviewIndexContainer breweryId={breweryId} resetView={resetView}/>
   }
   if (reviewView === "form") {
     component = <NewReviewContainer breweryId={breweryId} resetView={resetView} />

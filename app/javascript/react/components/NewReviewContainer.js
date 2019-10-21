@@ -29,7 +29,7 @@ const NewReviewContainer = props => {
   const postNewReview = (name) => {
     event.preventDefault()
     if (validForSubmission()) {
-      fetch("api/v1/reviews", {
+      fetch("/api/v1/reviews", {
         credentials: "same-origin",
         method: "POST",
         body: JSON.stringify(newReview),

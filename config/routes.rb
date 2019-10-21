@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get '/breweries/new', to: 'homes#index'
   get '/breweries/:id', to: 'homes#index'
   get '/breweries/:id/reviews', to: 'homes#index'
-  post '/breweries/api/v1/reviews', to: 'api/v1/reviews#create'
-  delete '/breweries/api/v1/reviews/:id', to: 'api/v1/reviews#delete'
 
   devise_for :users
 
@@ -14,7 +12,7 @@ Rails.application.routes.draw do
       resources :breweries, only: [:index, :create, :show] do
         resources :reviews, only: [:index]
       end
-      resources :reviews, only: [:create, :delete]
+      resources :reviews, only: [:create, :destroy, :update]
     end
   end
 end

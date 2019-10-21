@@ -26,9 +26,22 @@ class Api::V1::ReviewsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     Review.find(params[:id]).destroy
-    render json: { message: "Review Deleted" }
+    render json: { message: "Review #{params["id"]} Deleted" }
+  end
+
+  def update
+    edited_review = Review.find(params["id"])
+    if edited_review.user == current_user
+      if edited_review.update(review_params)
+        render json: edited_review
+      else
+        render json: edited_review.errors
+      end
+    else
+      render json: {user: "You are not permitted to edit this review."}
+    end
   end
 
   private
