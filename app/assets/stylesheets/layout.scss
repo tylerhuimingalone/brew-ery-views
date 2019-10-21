@@ -31,10 +31,20 @@
 
 .button {
   background-color: #601710;
-  font-family: 'Euphoria Script', sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  padding: 10px;
-  border-radius: 5px;
   color: #f5e2b3;
+  border-radius: 5px;
+  border-width: 0px;
+  font-family: 'Euphoria Script', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
 }
+
+// .button {
+//   background-color: #601710;
+//   font-family: 'Euphoria Script', sans-serif;
+//   font-size: 1.5em;
+//   font-weight: 600;
+//   padding: 10px;
+//   border-radius: 5px;
+//   color: #f5e2b3;
+// }
