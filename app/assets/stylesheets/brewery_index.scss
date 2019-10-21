@@ -1,9 +1,9 @@
 .index-title {
   font-family: 'Open Sans', serif;
-  font-size: 2.2em;
+  font-size: 2.5em;
   font-weight: bold;
   position: relative;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   color: #601710;
 }
 
@@ -12,4 +12,51 @@
   margin-left: auto;
   margin-right: auto;
   width: 90%;
+}
+
+.index-background {
+  background-color: #f5e2b3;
+  margin: 0px;
+  padding-top: 30px;
+  padding-bottom: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.index-page {
+  max-width: 1200px;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  padding-top: 20px;
+  color: #601710;
+
+  .button {
+    margin-top: 15px;
+    margin-right: 7px;
+    margin-left: 7px;
+  }
+
+  hr {
+    overflow: visible;
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  hr:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+  }
 }
