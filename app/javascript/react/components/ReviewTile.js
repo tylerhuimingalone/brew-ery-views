@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ReviewTile = props => {
+  let buttons = ""
+
+  const handleClick = (event) => {
+    props.deleteReview(props.id)
+  }
+
+  if (props.currentUser === props.userId) {
+    buttons = (
+      <div className="buttons">
+        <button className="button">Edit</button>
+        <button className="button" onClick={handleClick}>Delete</button>
+      </div>
+    )
+  }
+
   return(
     <div className="review-box">
-      <p>{props.rating}:{props.comment}</p>
+      {buttons}
+      <div><p>{props.rating}:{props.comment}</p></div>
     </div>
   )
 }
