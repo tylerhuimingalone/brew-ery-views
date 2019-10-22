@@ -14,5 +14,10 @@ Rails.application.routes.draw do
       end
       resources :reviews, only: [:create, :destroy, :update]
     end
+
+    namespace :admin do
+      resources :users, only: [:index, :show, :edit, :update]
+    end
+
   end
 end
