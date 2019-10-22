@@ -18,8 +18,15 @@ const ReviewTile = props => {
 
   return (
     <div className="review-box">
-      {buttons}
-      <div><p>{props.rating}:{props.comment}</p></div>
+      <div className="row">
+        <div className="columns small-12">
+          {props.rating}/5:&nbsp;{props.comment}
+        </div>
+        <div className="columns small-12 text-center">
+          {buttons}
+        </div>
+        <hr />
+      </div>
     </div>
   )
 }

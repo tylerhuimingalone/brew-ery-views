@@ -52,8 +52,8 @@ const EditReviewTile = props => {
   }
 
   return(
-    <div className="row">
-      <form className="small-12 medium-9 columns" onSubmit={postEditReview}>
+    <div className="edit-review">
+      <form className="small-12 columns" onSubmit={postEditReview}>
         <h4 className="text-center">Edit Review Form</h4>
         <h5 className="text-center">{errors.user}</h5>
         <label>
@@ -85,7 +85,10 @@ const EditReviewTile = props => {
           />
         </div>
       </form>
-      <button className="button" onClick={props.resetView}>Cancel</button>
+      <div className="cancel-button">
+        <button className="button" onClick={props.resetView}>Cancel</button>
+      </div>
+      <hr />
     </div>
   )
 }
