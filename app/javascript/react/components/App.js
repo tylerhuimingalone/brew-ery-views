@@ -13,6 +13,7 @@ export const App = (props) => {
         <Route exact path="/breweries" component={BreweryIndexContainer} />
         <Route exact path="/breweries/new" component={NewBreweryContainer} />
         <Route exact path="/breweries/:id" component={BreweryShowContainer} />
+        <Route exact path="/admin/users" component={UsersIndexContainer} />
       </Switch>
     </BrowserRouter>
   )

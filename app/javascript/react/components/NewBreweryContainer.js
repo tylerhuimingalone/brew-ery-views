@@ -154,7 +154,7 @@ const NewBreweryContainer = props => {
             </label>
 
             <label className="small-12 columns">
-              Image URL:
+              Image URL: (Optional)
               <input
                 type="text"
                 name="image"
