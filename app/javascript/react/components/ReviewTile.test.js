@@ -18,6 +18,6 @@ describe("ReviewTile", () => {
   })
 
   it("renders a p tag with the rating and optional comment", () => {
-    expect(wrapper.find("p").text()).toBe("3:This place was pretty good.")
+    expect(wrapper.find("p").text()).toBe("3/5: This place was pretty good.")
   })
 })
