@@ -39,33 +39,53 @@ const BreweryShowContainer = props => {
     setReviewView("reviews")
   }
 
+  let seeButton = 'selected'
+  let formButton = 'unselected'
+
   if (reviewView === "reviews") {
     component = <ReviewIndexContainer breweryId={breweryId} resetView={resetView}/>
+    seeButton ='selected'
+    formButton = 'unselected'
   }
   if (reviewView === "form") {
     component = <NewReviewContainer breweryId={breweryId} resetView={resetView} />
+    seeButton ='unselected'
+    formButton = 'selected'
   }
 
   return (
-    <div>
-      <div className = "columns small-12 medium-6">
-        <h3> {brewery.name} </h3>
-          <img src={brewery.image} width = "500"/>
-          <p>
-            {brewery.address}&nbsp;
-            {brewery.city},&nbsp;
-            {brewery.state}&nbsp;
-            {brewery.zip}
-          </p>
-          <Link to="/breweries"> Return to Homepage </Link>
-      </div>
-      <div className = "columns small-12 medium-6">
-        <div>
-          <button name="reviews" onClick={switchView}> See Reviews </button>
-          <button name="form" onClick={switchView}> Submit Reviews </button>
+    <div className="show-background">
+      <div className="row show-page">
+        <h3 className="show-title"> {brewery.name} </h3>
+        <hr className="show-hr"/>
+        <div className = "columns small-12 medium-6 show-block">
+          <div className="text-center">
+            <img src={brewery.image} />
+            <div className="info-box">
+              <p>
+                {brewery.address},&nbsp;
+                {brewery.city},&nbsp;
+                {brewery.state}&nbsp;
+                {brewery.zip}
+              </p>
+            </div>
+            <div className="button">
+              <Link to="/breweries"> Return to Homepage </Link>
+            </div>
+          </div>
         </div>
-        <div>
-          {component}
+        <div className = "columns small-12 medium-6 list-block">
+          <div className="show-tabs">
+            <button className={seeButton} name="reviews" onClick={switchView}>
+              See Reviews
+            </button>
+            <button className={formButton} name="form" onClick={switchView}>
+              Submit Review
+            </button>
+          </div>
+          <div className="show-component">
+            {component}
+          </div>
         </div>
       </div>
     </div>

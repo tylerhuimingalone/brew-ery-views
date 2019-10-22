@@ -1,0 +1,27 @@
+.edit-review {
+
+  margin: auto;
+  label {
+    text-align: left;
+  }
+  .button {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 3px;
+    width: 85px;
+  }
+
+  .cancel-button {
+    text-align: right;
+    margin-right: 15px;
+    .button {
+      margin-top: -52px;
+    }
+  }
+
+  hr {
+    margin-top: -10px;
+    width: 95%;
+  }
+
+}
