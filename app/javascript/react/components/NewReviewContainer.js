@@ -80,8 +80,8 @@ const NewReviewContainer = props => {
   }
 
   return(
-    <div className="row">
-      <form className="small-12 medium-9 columns" onSubmit={postNewReview}>
+    <div className="row text-center review-form">
+      <form className="small-12 columns" onSubmit={postNewReview}>
         <h4 className="text-center">New Review Form</h4>
         <h5 className="text-center">{errors.user}</h5>
         <label>
@@ -107,12 +107,12 @@ const NewReviewContainer = props => {
         </label>
 
         <div>
-          <button className="button" onClick={clearForm}>Clear</button>
           <input
             className="button"
             type="submit"
             value="Add Review"
           />
+          <button className="button" onClick={clearForm}>Clear</button>
         </div>
       </form>
     </div>
