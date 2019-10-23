@@ -1,0 +1,38 @@
+<h1>Edit Brewery</h1>
+<p><%= @errors %></p>
+<%= form_for ([:admin, @brewery]) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.select :state, @state_array %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to "Delete", ([:admin, @brewery]), method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+<% end %>
