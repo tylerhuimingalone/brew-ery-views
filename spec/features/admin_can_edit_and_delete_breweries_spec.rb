@@ -6,11 +6,7 @@ feature "an admin can see all breweries and change their information" do
     brewery2 = FactoryBot.create(:brewery)
     admin = FactoryBot.create(:user, admin: true)
 
-    visit new_user_session_path
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Log in'
-
+    login_as admin
     visit '/admin/breweries'
 
     expect(page).to have_content(brewery1.name)
@@ -23,15 +19,9 @@ feature "an admin can see all breweries and change their information" do
     brewery1 = FactoryBot.create(:brewery)
     admin = FactoryBot.create(:user, admin: true)
 
-    visit new_user_session_path
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Log in'
-
+    login_as admin
     visit '/admin/breweries'
-
     expect(page).to have_content(brewery1.name)
-
     click_link "Delete"
 
     expect(page).not_to have_content(brewery1.name)
@@ -41,11 +31,7 @@ feature "an admin can see all breweries and change their information" do
     brewery1 = FactoryBot.create(:brewery)
     admin = FactoryBot.create(:user, admin: true)
 
-    visit new_user_session_path
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Log in'
-
+    login_as admin
     visit '/admin/breweries'
 
     expect(page).to have_content(brewery1.name)
@@ -62,11 +48,7 @@ feature "an admin can see all breweries and change their information" do
     brewery1 = FactoryBot.create(:brewery)
     admin = FactoryBot.create(:user, admin: true)
 
-    visit new_user_session_path
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Log in'
-
+    login_as admin
     visit '/admin/breweries'
 
     expect(page).to have_content(brewery1.name)
@@ -82,11 +64,7 @@ feature "an admin can see all breweries and change their information" do
     brewery1 = FactoryBot.create(:brewery)
     admin = FactoryBot.create(:user, admin: true)
 
-    visit new_user_session_path
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Log in'
-
+    login_as admin
     visit '/admin/breweries'
 
     expect(page).to have_content(brewery1.name)

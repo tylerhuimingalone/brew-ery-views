@@ -5,10 +5,7 @@ feature "an admin can see all users and change their roles" do
     member = FactoryBot.create(:user)
     admin = FactoryBot.create(:user, admin: true)
 
-    visit new_user_session_path
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Log in'
+    login_as admin
     visit '/admin/users'
 
     expect(page).to have_content(member.email)
@@ -22,10 +19,7 @@ feature "an admin can see all users and change their roles" do
     member = FactoryBot.create(:user)
     admin = FactoryBot.create(:user, admin: true)
 
-    visit new_user_session_path
-    fill_in 'Email', with: admin.email
-    fill_in 'Password', with: admin.password
-    click_button 'Log in'
+    login_as admin
     visit '/admin/users'
     click_link "Change Role"
 
