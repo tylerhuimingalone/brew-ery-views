@@ -1,10 +1,22 @@
 .top-bar-section li,
 .top-bar {
+  padding: 0px;
+  background-color: #601710;
+
   a {
     color: #f5e2b3;
   }
-  padding: 0px;
-  background-color: #601710;
+
+  ul {
+    background-color: #601710;
+
+    .avatar {
+      vertical-align: middle;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
 }
 
 .title {
@@ -23,12 +35,6 @@
   margin-right: 3%;
 }
 
-.flash {
-  padding-right: 20px;
-  padding-top: 5px;
-  text-align: right;
-}
-
 .button {
   background-color: #601710;
   color: #f5e2b3;
@@ -38,13 +44,3 @@
   font-size: 1em;
   font-weight: 600;
 }
-
-// .button {
-//   background-color: #601710;
-//   font-family: 'Euphoria Script', sans-serif;
-//   font-size: 1.5em;
-//   font-weight: 600;
-//   padding: 10px;
-//   border-radius: 5px;
-//   color: #f5e2b3;
-// }
