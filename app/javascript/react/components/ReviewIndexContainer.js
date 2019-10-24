@@ -7,7 +7,10 @@ import EditReviewContainer from './EditReviewContainer'
 const ReviewIndexContainer = props => {
   const [reviews, setReviews] = useState([])
   const [currentUserId, setCurrentUserId] = useState(0)
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState({
+    messageText: "",
+    refresh: false
+  })
   const [reviewId, setReviewId] = useState(0)
 
   useEffect(() => {fetch(`/api/v1/breweries/${props.breweryId}/reviews`)
@@ -56,7 +59,18 @@ const ReviewIndexContainer = props => {
 
   const resetPage = () => {
     props.resetView()
-    setMessage("Saved")
+    setMessage({
+      messageText: "Review saved",
+      refresh: true
+    })
+    setReviewId(null)
+  }
+
+  const resetPageFromCancel = () => {
+    setMessage({
+      messageText: "",
+      refresh: true
+    })
     setReviewId(null)
   }
 
@@ -74,6 +88,7 @@ const ReviewIndexContainer = props => {
           rating={review.rating}
           comment={review.comment}
           resetView={resetPage}
+          resetPageFromCancel={resetPageFromCancel}
         />
       )
     } else {
@@ -95,7 +110,7 @@ const ReviewIndexContainer = props => {
 
   return (
     <div>
-      {message}
+      {message["messageText"]}
       {reviewTiles}
     </div>
   )

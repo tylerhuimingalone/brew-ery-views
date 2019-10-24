@@ -64,12 +64,13 @@ ActiveRecord::Schema.define(version: 2019_10_24_134505) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.bigint "review_id"
-    t.bigint "user_id"
-    t.integer "vote"
+    t.bigint "review_id", null: false
+    t.bigint "user_id", null: false
+    t.integer "vote", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["review_id"], name: "index_votes_on_review_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
+
 end

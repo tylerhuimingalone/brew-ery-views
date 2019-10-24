@@ -28,7 +28,12 @@ class Api::V1::ReviewsController < ApplicationController
 
   def destroy
     Review.find(params[:id]).destroy
-    render json: { message: "Review #{params["id"]} Deleted" }
+    render json: { message:
+      {
+        messageText: "Review deleted",
+        refresh: true
+      }
+    }
   end
 
   def update

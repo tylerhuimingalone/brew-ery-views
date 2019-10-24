@@ -86,7 +86,7 @@ const EditReviewTile = props => {
         </div>
       </form>
       <div className="cancel-button">
-        <button className="button" onClick={props.resetView}>Cancel</button>
+        <button className="button" onClick={props.resetPageFromCancel}>Cancel</button>
       </div>
       <hr />
     </div>
