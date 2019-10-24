@@ -6,4 +6,5 @@ class Brewery < ApplicationRecord
   validates :zip, presence: true
 
   has_many :reviews, dependent: :destroy
+  has_many :beers
 end
