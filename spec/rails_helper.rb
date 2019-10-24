@@ -8,6 +8,8 @@ require 'rspec/rails'
 require File.join(File.dirname(__FILE__), 'support/shoulda')
 require File.join(File.dirname(__FILE__), 'support/valid_attribute')
 require File.join(File.dirname(__FILE__), 'support/factory_bot')
+require File.join(File.dirname(__FILE__), 'support/devise_controller_spec')
+require File.join(File.dirname(__FILE__), 'support/database_cleaner')
 require 'capybara/rspec'
 require "factory_bot"
 
@@ -39,6 +41,8 @@ end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.include Warden::Test::Helpers
+
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

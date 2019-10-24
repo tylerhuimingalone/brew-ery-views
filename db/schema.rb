@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_184821) do
     t.datetime "updated_at", null: false
     t.string "username", null: false
     t.boolean "admin", default: false
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -61,5 +62,4 @@ ActiveRecord::Schema.define(version: 2019_10_23_184821) do
     t.index ["review_id"], name: "index_votes_on_review_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
-
 end

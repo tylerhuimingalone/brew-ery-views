@@ -59,7 +59,6 @@ const ReviewTile = props => {
 
   return (
     <div className="review-box row">
-      {buttons}
       <div className="small-9 columns">
         <p>{props.rating}:{props.comment} - score: {reviewScore}</p>
       </div>
@@ -67,8 +66,11 @@ const ReviewTile = props => {
         <i className="fas fa-arrow-circle-up fa-lg" onClick={voteUp}/>
         <i className="fas fa-arrow-circle-down fa-lg" onClick={voteDown}/>
       </div>
+      <div className="columns small-12 text-center">
+        {buttons}
+      </div>
+      <hr />
     </div>
-
   )
 }
 

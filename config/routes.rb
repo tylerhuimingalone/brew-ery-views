@@ -17,5 +17,15 @@ Rails.application.routes.draw do
         resources :votes, only: [:create]
       end
     end
+
+    namespace :admin do
+      resources :users, only: [:index, :show, :edit, :update]
+    end
+
+  end
+
+  namespace :admin do
+    resources :users, only: [:index, :update]
+    resources :breweries, only: [:index, :edit, :update, :destroy]
   end
 end
