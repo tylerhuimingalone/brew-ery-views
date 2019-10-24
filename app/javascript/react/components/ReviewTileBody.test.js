@@ -30,7 +30,11 @@ describe("ReviewTileBody", () => {
   })
 
   it("renders a p tag with the rating and optional comment", () => {
-    expect(wrapper.find("p").text()).toBe("3/5: This place was pretty good. - score: 2")
+    expect(wrapper.find("p").text()).toBe("3/5: This place was pretty good.")
+  })
+
+  it("renders a div tag with the score", () => {
+    expect(wrapper.find(".score").text()).toBe("Score: 2")
   })
 
   it('upVote should invoke the onClick function from props when clicked', () => {
