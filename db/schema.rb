@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_10_24_134505) do
     t.datetime "updated_at", null: false
     t.text "comment"
     t.bigint "user_id", null: false
+    t.integer "total", default: 0
     t.index ["brewery_id"], name: "index_reviews_on_brewery_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -62,4 +63,13 @@ ActiveRecord::Schema.define(version: 2019_10_24_134505) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "review_id"
+    t.bigint "user_id"
+    t.integer "vote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_votes_on_review_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
 end
