@@ -128,3 +128,45 @@ Review.create(
   brewery_id: 6,
   user_id: 1
 )
+
+Beer.create(
+  name: "A Beer",
+  beer_type: "Laaaaaaager",
+  description: "Piss in a glass",
+  brewery_id: 1
+)
+
+Beer.create(
+  name: "Portman's Unusual",
+  beer_type: "Stout",
+  description: "",
+  brewery_id: 1
+)
+
+Beer.create(
+  name: "A Most Peculiar Upchuck",
+  beer_type: "IPA",
+  description: "Honestly, it is",
+  brewery_id: 2
+)
+
+Beer.create(
+  name: "Another Thing To Make Me Do Something Stupid",
+  beer_type: "Who Knows",
+  description: "IT'S PRETTY AWESOME",
+  brewery_id: 3
+)
+
+Beer.create(
+  name: "Dogsbottom IPA",
+  beer_type: "IP",
+  description: "Better than one might think",
+  brewery_id: 1
+)
+
+Beer.create(
+  name: "German Exploitation Hefeweiss",
+  beer_type: "Wheat",
+  description: "Completely original, our own ceeation",
+  brewery_id: 1
+)
