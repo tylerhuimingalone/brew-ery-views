@@ -62,7 +62,7 @@ const BreweryShowContainer = props => {
     formButton = 'unselected'
     beerButton = 'selected'
   }
-
+  
   return (
     <div className="show-background">
       <div className="row show-page">
