@@ -8,7 +8,7 @@ const ReviewIndexContainer = props => {
   const [reviews, setReviews] = useState([])
   const [currentUserId, setCurrentUserId] = useState(0)
   const [message, setMessage] = useState("")
-  const [reviewId, setReviewId] = useState(null)
+  const [reviewId, setReviewId] = useState(0)
 
   useEffect(() => {fetch(`/api/v1/breweries/${props.breweryId}/reviews`)
     .then((response) => {
@@ -84,6 +84,7 @@ const ReviewIndexContainer = props => {
           rating={review.rating}
           comment={review.comment}
           userId={review.user_id}
+          score={review.total}
           currentUser={currentUserId}
           deleteReview={deleteReview}
           editReview={clickHandler}

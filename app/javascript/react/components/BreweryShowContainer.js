@@ -45,7 +45,7 @@ const BreweryShowContainer = props => {
   if (reviewView === "form") {
     component = <NewReviewContainer breweryId={breweryId} resetView={resetView} />
   }
-
+  
   return (
     <div>
       <div className = "columns small-12 medium-6">
