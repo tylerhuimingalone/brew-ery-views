@@ -82,7 +82,7 @@ const BreweryShowContainer = props => {
                 {brewery.zip}
               </p>
               <p>
-                Average Review Score: {averageScore}
+                Average Rating: {averageScore}
               </p>
             </div>
             <div className="button">
