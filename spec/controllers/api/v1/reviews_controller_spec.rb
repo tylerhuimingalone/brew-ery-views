@@ -159,7 +159,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       expect(returned_json).to be_kind_of(Hash)
       expect(returned_json).to_not be_kind_of(Array)
 
-      expect(returned_json["message"]).to eq("Review #{id} Deleted")
+      expect(returned_json["message"]["messageText"]).to eq("Review deleted")
       expect(Review.count).to eq(current_count - 1)
     end
   end
