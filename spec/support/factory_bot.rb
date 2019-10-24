@@ -20,6 +20,7 @@ FactoryBot.define do
   factory :review do
     rating { 3 }
     comment { "hello this is a comment" }
-    brewery_id { Brewery.first }
+    brewery { Brewery.first }
+    user { User.first }
   end
 end

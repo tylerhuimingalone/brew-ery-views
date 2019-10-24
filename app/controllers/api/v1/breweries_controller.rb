@@ -6,7 +6,8 @@ class Api::V1::BreweriesController < ApplicationController
   end
 
   def show
-    render json: Brewery.find(params["id"])
+    average = average_score(params["id"])
+    render json: {brewery: Brewery.find(params["id"]), average: average}
   end
 
   def create
@@ -24,6 +25,20 @@ class Api::V1::BreweriesController < ApplicationController
   end
 
   private
+
+  def average_score(brewery_id)
+    brewery = Brewery.find(brewery_id)
+    score_total = 0
+    review_list = brewery.reviews
+    review_list.each do |review|
+      score_total += review.rating
+    end
+    if review_list.length == 0
+      return "No reviews"
+    end
+    score_total / review_list.length
+  end
+
   def brewery_params
     params.require(:brewery).permit(:name, :address, :city, :state, :zip, :image)
   end
