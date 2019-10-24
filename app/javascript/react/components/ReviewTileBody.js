@@ -3,7 +3,7 @@ import React from 'react'
 const ReviewTileBody = props => {
   return(
     <div className="review-box row">
-      <div className="small-12 columns">
+      <div className="small-12 columns errors">
         {props.errors}
       </div>
       <div className="small-9 columns">

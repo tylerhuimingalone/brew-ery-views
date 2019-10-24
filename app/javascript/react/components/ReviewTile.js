@@ -58,8 +58,8 @@ const ReviewTile = props => {
   if (props.currentUser === props.userId) {
     buttons = (
       <div className="buttons">
-        <button className="button" onClick={props.editReview}>Edit</button>
-        <button className="button" onClick={handleClick}>Delete</button>
+        <button className="button edit" onClick={props.editReview}>Edit</button>
+        <button className="button delete" onClick={handleClick}>Delete</button>
       </div>
     )
   }
@@ -73,7 +73,7 @@ const ReviewTile = props => {
       buttons={buttons}
       voteUp={voteUp}
       voteDown={voteDown}
-       />
+    />
   )
 }
 

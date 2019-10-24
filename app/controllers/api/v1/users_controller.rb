@@ -9,8 +9,7 @@ class Api::V1::UsersController < ApplicationController
 
   def authorize_user
     if !user_signed_in? || !current_user.admin?
-      raise ActionController::RoutingError.new("Not Found")
-      # line 8 should show 404 'must be an admin' error
+      raise ActionController::RoutingError.new("Must be an Admin")
     end
   end
 end
