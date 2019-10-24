@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import ReviewTileBody from './ReviewTileBody'
+
 const ReviewTile = props => {
   const [reviewScore, setReviewScore] = useState(props.score)
   const [errors, setErrors] = useState("")
@@ -63,22 +65,15 @@ const ReviewTile = props => {
   }
 
   return (
-    <div className="review-box row">
-      <div className="small-12 columns">
-        {errors}
-      </div>
-      <div className="small-9 columns">
-        <p>{props.rating}:{props.comment} - score: {reviewScore}</p>
-      </div>
-      <div className="small-3 columns">
-        <i className="fas fa-arrow-circle-up fa-lg" onClick={voteUp}/>
-        <i className="fas fa-arrow-circle-down fa-lg" onClick={voteDown}/>
-      </div>
-      <div className="columns small-12 text-center">
-        {buttons}
-      </div>
-      <hr />
-    </div>
+    <ReviewTileBody
+      errors={errors}
+      rating={props.rating}
+      comment={props.comment}
+      reviewScore={reviewScore}
+      buttons={buttons}
+      voteUp={voteUp}
+      voteDown={voteDown}
+       />
   )
 }
 
