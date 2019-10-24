@@ -4,6 +4,12 @@
     <hr class="login-hr">
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+      
       <div class="field">
         <%= f.label :email, "Email:", {class: "login-label"} %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

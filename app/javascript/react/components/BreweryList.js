@@ -31,7 +31,7 @@ const BreweryList = props => {
   })
 
   return(
-    <div className="small-12 medium-3 columns">
+    <div className="small-12 medium-3 columns brewery-list">
       <h4 className="text-center list-title">Current Breweries</h4>
       <hr />
       <ul>
