@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 const ReviewTile = props => {
   const [reviewScore, setReviewScore] = useState(props.score)
+  const [errors, setErrors] = useState("")
   let buttons = ""
 
   const handleClick = (event) => {
@@ -31,7 +32,11 @@ const ReviewTile = props => {
     })
     .then(response => response.json())
     .then(body => {
-      setReviewScore(body.total)
+      if (body.id) {
+        setReviewScore(body.total)
+      } else {
+        setErrors(body.user)
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
@@ -59,6 +64,9 @@ const ReviewTile = props => {
 
   return (
     <div className="review-box row">
+      <div className="small-12 columns">
+        {errors}
+      </div>
       <div className="small-9 columns">
         <p>{props.rating}:{props.comment} - score: {reviewScore}</p>
       </div>

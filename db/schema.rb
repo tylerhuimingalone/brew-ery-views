@@ -62,4 +62,5 @@ ActiveRecord::Schema.define(version: 2019_10_23_184821) do
     t.index ["review_id"], name: "index_votes_on_review_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
+
 end
