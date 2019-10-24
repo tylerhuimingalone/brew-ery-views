@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :breweries, only: [:index, :create, :show] do
         resources :reviews, only: [:index]
+        resources :beers, only: [:index]
       end
       resources :reviews, only: [:create, :destroy, :update] do
         resources :votes, only: [:create]

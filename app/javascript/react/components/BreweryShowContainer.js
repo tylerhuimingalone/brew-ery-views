@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import ReviewIndexContainer from './ReviewIndexContainer'
 import NewReviewContainer from './NewReviewContainer'
+import BeerIndexContainer from './BeerIndexContainer'
 
 const BreweryShowContainer = props => {
   const [brewery, setBrewery] = useState([])
@@ -41,16 +42,25 @@ const BreweryShowContainer = props => {
 
   let seeButton = 'selected'
   let formButton = 'unselected'
+  let beerButton = 'unselected'
 
   if (reviewView === "reviews") {
     component = <ReviewIndexContainer breweryId={breweryId} resetView={resetView}/>
     seeButton ='selected'
     formButton = 'unselected'
+    beerButton = 'unselected'
   }
   if (reviewView === "form") {
     component = <NewReviewContainer breweryId={breweryId} resetView={resetView} />
     seeButton ='unselected'
     formButton = 'selected'
+    beerButton = 'unselected'
+  }
+  if (reviewView === "beers") {
+    component = <BeerIndexContainer breweryId={breweryId} resetView={resetView} />
+    seeButton ='unselected'
+    formButton = 'unselected'
+    beerButton = 'selected'
   }
   
   return (
@@ -77,10 +87,13 @@ const BreweryShowContainer = props => {
         <div className = "columns small-12 medium-6 list-block">
           <div className="show-tabs">
             <button className={seeButton} name="reviews" onClick={switchView}>
-              See Reviews
+              See<br/>Reviews
             </button>
             <button className={formButton} name="form" onClick={switchView}>
-              Submit Review
+              Submit<br/>Review
+            </button>
+            <button className={beerButton} name="beers" onClick={switchView}>
+              See<br/>Beers
             </button>
           </div>
           <div className="show-component">
