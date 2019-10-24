@@ -6,8 +6,9 @@ import NewReviewContainer from './NewReviewContainer'
 import BeerIndexContainer from './BeerIndexContainer'
 
 const BreweryShowContainer = props => {
-  const [brewery, setBrewery] = useState([])
+  const [brewery, setBrewery] = useState({})
   const [reviewView, setReviewView] = useState("reviews")
+  const [averageScore, setAverageScore] = useState(0)
 
   let breweryId = props.match.params.id
 
@@ -25,7 +26,9 @@ const BreweryShowContainer = props => {
     })
     .then(response => response.json())
     .then(body => {
-      setBrewery(body)
+      debugger
+      setBrewery(body.brewery)
+      setAverageScore(body.average)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   },[])
@@ -77,6 +80,9 @@ const BreweryShowContainer = props => {
                 {brewery.city},&nbsp;
                 {brewery.state}&nbsp;
                 {brewery.zip}
+              </p>
+              <p>
+                Average Rating: {averageScore}
               </p>
             </div>
             <div className="button">
