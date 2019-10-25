@@ -15,7 +15,7 @@ const BreweryTile = props => {
         </Link>
         <div className="top-centered">
           <p className="brewery-name">
-            {props.name}
+            <strong>{props.name}</strong>
           </p>
         </div>
         <div className="bottom-centered">

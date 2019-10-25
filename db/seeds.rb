@@ -573,7 +573,7 @@ Beer.create(
 
 backlash_brewery = Brewery.create(
   name: "Backlash Beer Company",
-  address: "8WHG+33",
+  address: "152 Hampden St",
   city: "Boston",
   state: "MA",
   zip: "02119",
