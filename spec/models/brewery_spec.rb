@@ -1,6 +1,13 @@
 require 'spec_helper'
 
 RSpec.describe Brewery, type: :model do
+  before do
+    @brewery = FactoryBot.create(:brewery)
+  end
+
+  subject { @brewery }
+
+  it { should validate_uniqueness_of(:name) }
   it { should have_valid(:name).when("Brew City") }
   it { should_not have_valid(:name).when(nil, "") }
 

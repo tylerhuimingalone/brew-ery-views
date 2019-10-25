@@ -22,7 +22,7 @@ feature "an admin can see all users and change their roles" do
     login_as admin
     visit '/admin/users'
     click_link "Change Role"
-
+    
     expect(page).to have_content(member.email)
     expect(page).to have_content(admin.username)
     expect(page).to have_content("Change Role")
