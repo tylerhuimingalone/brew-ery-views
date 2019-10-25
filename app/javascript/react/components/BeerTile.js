@@ -11,8 +11,8 @@ const BeerTile = props => {
             Type: {props.type}
           </p>
         </div>
-        <div className="columns small-12">
-          Description: {props.description}
+        <div className="columns small-12 description">
+          {props.description}
         </div>
         <hr />
       </div>
